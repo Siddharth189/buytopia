@@ -10,7 +10,7 @@ function Cart() {
 
   return (
     <div>
-      Your Cart
+      <span style={{ fontSize: "3rem", fontWeight: "bold" }}> Your Cart </span>
       {mycart ? (
         mycart.map((pro, index) => (
           <CartList

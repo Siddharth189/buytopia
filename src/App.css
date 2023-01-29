@@ -181,8 +181,15 @@
 }
 .cart-list li {
   display: inline;
-  margin: 20px;
 }
+
+.cart-list {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding: 20px;
+}
+
 .cart-list img {
   width: 20px;
   height: auto;
