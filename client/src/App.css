@@ -179,6 +179,7 @@
   border: 1px solid #999;
   font-size: 20px;
 }
+
 .cart-list li {
   display: inline;
 }
@@ -188,9 +189,23 @@
   justify-content: space-around;
   text-decoration: none;
   padding: 20px;
+  font-size: 2rem;
 }
 
 .cart-list img {
-  width: 20px;
+  width: 50px;
   height: auto;
+}
+
+.payment {
+  background-color: #4568f2;
+  width: 50vw;
+  border-radius: 20px;
+  box-shadow: transparent 0 0 0 3px, rgba(47, 49, 87, 0.969) 0 6px 20px;
+  float: right;
+  margin: 5px;
+}
+
+input {
+  width: 80%;
 }

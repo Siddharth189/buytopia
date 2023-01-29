@@ -3,7 +3,13 @@ import { MdOutlineAddBox } from "react-icons/md";
 import { GoDiffRemoved } from "react-icons/go";
 
 function CartList(props) {
-  const [quan, setQuan] = useState(1);
+  const [quan, setQuan] = useState(0);
+
+  const handleQuantityChange = (quan) => {
+    setQuan(quan);
+    props.onQuantityChange(quan, props.price);
+  };
+
   return (
     <div>
       <ul className="cart-list">
@@ -14,13 +20,13 @@ function CartList(props) {
         <li>{props.price}</li>
         <li>
           {quan && (
-            <span onClick={() => setQuan(quan - 1)}>
+            <span onClick={() => handleQuantityChange(quan - 1)}>
               {" "}
               <GoDiffRemoved />{" "}
             </span>
           )}
           {quan}{" "}
-          <span onClick={() => setQuan(quan + 1)}>
+          <span onClick={() => handleQuantityChange(quan + 1)}>
             {" "}
             <MdOutlineAddBox />{" "}
           </span>

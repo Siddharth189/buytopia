@@ -1,6 +1,7 @@
 import { TbCurrencyRupee } from "react-icons/tb";
 import Popup from "./Popup";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Card(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,9 @@ function Card(props) {
                     />
                     <h2 className="pricing-header">{props.name}</h2>
                     <span className="pricing-price">Rs{props.price}</span>
-                    <button className="shop-now">Go to Cart</button>
+                    <Link to="/cart">
+                      <button className="shop-now">Go to Cart</button>
+                    </Link>
                   </div>
                 </div>
               </>
