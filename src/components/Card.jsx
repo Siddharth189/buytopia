@@ -1,14 +1,45 @@
 import { TbCurrencyRupee } from "react-icons/tb";
+import Popup from "./Popup";
+import React, { useState } from "react";
+
 function Card(props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div class="panel">
       <div class="pricing-plan">
         <img src={props.img} alt="product-image" class="pricing-img" />
-        <h2 class="pricing-header">{props.name}</h2>
-        <span class="pricing-price">
+
+        <h2 className="pricing-header">{props.name}</h2>
+        <span className="pricing-price">
           <TbCurrencyRupee /> {props.price}
         </span>
-        <button className="shop-now">Add to Cart</button>
+        <button className="shop-now" onClick={togglePopup}>
+          Add to Cart
+        </button>
+        {isOpen && (
+          <Popup
+            content={
+              <>
+                <div class="panel">
+                  <div class="pricing-plan">
+                    <img
+                      src={props.img}
+                      alt="product-image"
+                      class="pricing-img"
+                    />
+                    <h2 className="pricing-header">{props.name}</h2>
+                    <span className="pricing-price">Rs{props.price}</span>
+                    <button className="shop-now">Go to Cart</button>
+                  </div>
+                </div>
+              </>
+            }
+            handleClose={togglePopup}
+          />
+        )}
       </div>
     </div>
   );
